@@ -19,7 +19,9 @@
     $rawResponse = fetchUrl('POST', APPLICANT_TEST_URL, "token={$parsedToken}", $cookieData);
     $body = splitCookies($rawResponse)[1];
 
-    echo $body;
+    preg_match('#<span[^<>]*>([\d,]+).*?</span>#', $body, $answer);
+
+    echo 'RESULT: '. $answer[1];
 
     die();
 
