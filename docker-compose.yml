@@ -8,4 +8,4 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ./src:/var/www/src
+      - ./src:/var/www/html
